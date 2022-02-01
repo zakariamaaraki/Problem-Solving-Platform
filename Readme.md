@@ -12,6 +12,16 @@ This Platform is written using .NET Core
 
 ![Architecture](images/ProblemSolvingPlatform.png?raw=true "ProblemSolvingPlatform")
 
+## UI
+
+The UI is written using **Razor** template engine
+
+## For dev env
+
+For dev env you can use the swagger page accessible using this url : [https://localhost:7074/swagger](https://localhost:7074/swagger)
+
+![Swagger](images/Swagger-page.png?raw=true "ProblemSolvingPlatformSwagger")
+
 ## Author
 
 - **Zakaria Maaraki** - _Initial work_ - [zakariamaaraki](https://github.com/zakariamaaraki)
