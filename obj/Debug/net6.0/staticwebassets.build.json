@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "9KnCAOfkB6VLhEB3+jq6UP8fqKdsVbyWMs7UQG/+8P8=",
+  "Source": "problemService",
+  "BasePath": "_content/problemService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "problemService/wwwroot",
+      "Source": "problemService",
+      "ContentRoot": "/home/zakaria/Desktop/problemService/wwwroot/",
+      "BasePath": "_content/problemService",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
