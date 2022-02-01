@@ -1,4 +1,4 @@
-# Problem Solver Platform
+# Problem Solving Platform
 
 Platform for competitive coding where programmers can practice solving problems from **very beginner level** to **very advanced level**.
 This Platform is written using .Net Core 6
