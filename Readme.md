@@ -10,7 +10,7 @@ This Platform is written using .NET Core
 
 ## Architecture 
 
-![Architecture](images/ProblemSolvingArchitecture.png?raw=true "ProblemSolvingPlatform")
+![Architecture](images/ProblemSolvingPlatform.png?raw=true "ProblemSolvingPlatform")
 
 ## Author
 
