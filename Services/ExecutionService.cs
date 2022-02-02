@@ -69,6 +69,7 @@ public class ExecutionService : IExecutionService
 
             if (httpResponseMessage.IsSuccessStatusCode)
             {
+                _logger.LogInformation("Success response : ");
 
                 var contentStream = httpResponseMessage.Content.ReadAsStream();
 
