@@ -78,10 +78,12 @@
         <div class="row content">
             <div class="col-sm-2 sidenav">
                 <h3>Companies</h3>
-
-                @foreach (var Company in @ViewBag.Companies)
+                @if (!HttpMethods.IsPost(Request.Method))
                 {
-                    <p><a href="/?company=@Company">@Company</a></p>
+                    @foreach (var Company in @ViewBag.Companies)
+                    {
+                        <p><a href="/?company=@Company">@Company</a></p>
+                    }
                 }
             </div>
             <div class="col-sm-8 text-left">
@@ -120,10 +122,12 @@
             </div>
             <div class="col-sm-2 sidenav">
                 <h3>Topics</h3>
-
-                @foreach (var Tag in @ViewBag.Tags)
+                @if (!HttpMethods.IsPost(Request.Method))
                 {
-                    <p><a href="/?topic@Tag=">@Tag</a></p>
+                    @foreach (var Tag in @ViewBag.Tags)
+                    {
+                        <p><a href="/?topic@Tag=">@Tag</a></p>
+                    }
                 }
             </div>
         </div>
