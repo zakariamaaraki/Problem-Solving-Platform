@@ -63,15 +63,18 @@ public class ExecutionService : IExecutionService
 
             httpRequestMessage.Content = JsonContent.Create(request);
 
-            _logger.LogInformation("Send request to the compiler");
+            _logger.LogInformation("Sending request to the compiler");
 
             var httpResponseMessage = httpClient.Send(httpRequestMessage);
 
             if (httpResponseMessage.IsSuccessStatusCode)
             {
+
                 var contentStream = httpResponseMessage.Content.ReadAsStream();
 
                 CompilerResponse compilerResponse = JsonSerializer.DeserializeAsync<CompilerResponse>(contentStream).Result;
+
+                _logger.LogInformation("Response : ", compilerResponse);
 
                 if (compilerResponse != null && !compilerResponse.status.Equals(ACCEPTED_STATUS))
                 {
