@@ -21,7 +21,7 @@ services:
       EXECUTION_TIME_MAX: 15
       EXECUTION_TIME_MIN: 0
     ports:
-      - "8080:8082"
+      - "8082:8082"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
   app:

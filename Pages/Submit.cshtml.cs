@@ -47,12 +47,11 @@ public class SubmitPage : PageModel
         ViewData["Tags"] = tags;
     }
 
-    public void OnPostAsync()
+    public void OnPost()
     {
         Task.Run(() =>
         {
             Submission submission = new Submission();
-            Console.Write(language);
             submission.Language = language;
             submission.SourceCode = sourceCode;
             submission.ProblemId = problemId;

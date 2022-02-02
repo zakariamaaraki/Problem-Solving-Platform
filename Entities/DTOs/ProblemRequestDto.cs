@@ -1,26 +1,38 @@
 namespace Problem.Entities;
 
+using System.ComponentModel.DataAnnotations;
+
 public record ProblemRequestDto
 {
-
+    [Required]
+    [StringLength(100)]
     public string Name { get; set; }
 
+    [Required]
     public string ProblemDescription { get; set; }
 
+    [Required]
     public string InputDescription { get; set; }
 
+    [Required]
     public string OutputDescription { get; set; }
 
+    [Required]
     public List<string> Companies { get; set; }
 
+    [Required]
     public List<string> Tags { get; set; }
 
+    [Required]
     public List<ProblemExample> ProblemExamples { get; set; }
 
+    [Required]
     public List<TestCase> TestCases { get; set; }
 
+    [Required]
     public int TimeLimit { get; set; }
 
+    [Required]
     public int MemoryLimit { get; set; }
 
     public Difficulty Difficulty { get; set; }

@@ -65,7 +65,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="">Problems</a></li>
+                    <li><a href="/">Problems</a></li>
                     <li><a href="/Submissions">Submissions</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
@@ -99,7 +99,7 @@
                             <strong>Time Limit : </strong><em>@ViewBag.Problem.TimeLimit Seconds</em>
                         </p>
                         <p>
-                            <strong>Memory Limit : </strong><em>@ViewBag.Problem.TimeLimit Megabytes</em>
+                            <strong>Memory Limit : </strong><em>@ViewBag.Problem.MemoryLimit Megabytes</em>
                         </p>
 
                         <p>
@@ -112,14 +112,14 @@
                     <p>
                         @foreach (var tag in @ViewBag.Problem.Tags)
                         {
-                            <em style="color: blue">#@tag </em>
+                            <em style="color: blue"><a style="color: inherit;" href="/?topic=@tag">#@tag </a> </em>
                         }
                     </p>
 
                     <p>
                         @foreach (var company in @ViewBag.Problem.Companies)
                         {
-                            <em style="color: grey">#@company </em>
+                            <em style="color: grey"><a style="color: inherit;" href="/?company=@company">#@company </a></em>
                         }
                     </p>
 

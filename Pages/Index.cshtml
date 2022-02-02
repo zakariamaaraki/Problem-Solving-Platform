@@ -110,17 +110,18 @@
                                     <td style="color: grey">
                                         @foreach (var Company in @Problem.Companies)
                                         {
-                                            <text>#@Company </text>
+                                            <a style="color: inherit;" href="/?company=@Company">#@Company </a>
                                         }
                                     </td>
                                     <td style="color: blue">
                                         @foreach (var Topic in @Problem.Tags)
                                         {
-                                            <text>#@Topic </text>
+                                            <a style="color: inherit;" href="/?topic=@Topic">#@Topic </a>
                                         }
                                     </td>
-                                    <td style="color: green">@Problem.Difficulty</td>
-                                    <td>@Problem.Acceptance %</td>
+                                    <td style=" color: green">@Problem.Difficulty
+                                    </td>
+                                    <td><span class="label label-warning">@Problem.Acceptance %</span></td>
                                 </tr>
                             }
 

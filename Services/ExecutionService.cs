@@ -38,7 +38,7 @@ public class ExecutionService : IExecutionService
 
         ServiceResponse serviceResponse;
 
-        if (problem == null)
+        if (problem == null || problem.TestCases.Count == 0)
         {
             return null;
         }
