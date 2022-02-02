@@ -8,6 +8,21 @@ This Platform is written using .NET Core
 * The platform communicate using Rest calls with an online code compiler that i developed using Java (Spring) check out [https://github.com/zakariamaaraki/RemoteCodeCompiler](https://github.com/zakariamaaraki/RemoteCodeCompiler).
 * The platform uses MongoDB as a Database.
 
+## Getting Started
+
+First you'll need to build the docker image of the project [https://github.com/zakariamaaraki/RemoteCodeCompiler](https://github.com/zakariamaaraki/RemoteCodeCompiler). 
+
+```shell
+cd RemoteCodeCompiler
+docker build . -t compiler
+```
+
+Then 
+
+```shell
+docker-compose up --build
+```
+
 ## Architecture 
 
 ![Architecture](images/ProblemSolvingPlatform.png?raw=true "ProblemSolvingPlatform")
