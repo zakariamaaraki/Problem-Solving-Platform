@@ -32,6 +32,19 @@ public class SubmitPage : PageModel
         var problemReference = HttpContext.Request.Query["problemReference"];
         ViewData["ProblemReference"] = problemReference;
         ViewData["ProblemName"] = _problemService.GetAsync(problemReference).Result.Name;
+
+        List<ProblemResponseDto> problems = new List<ProblemResponseDto>();
+        HashSet<string> companies = new HashSet<string>();
+        HashSet<string> tags = new HashSet<string>();
+        _problemService.GetAsync().Result.ForEach(problem =>
+        {
+            problems.Add(new ProblemResponseDto(problem));
+            problem.Companies.ForEach(company => companies.Add(company));
+            problem.Tags.ForEach(tag => tags.Add(tag));
+        });
+        ViewData["Problems"] = problems;
+        ViewData["Companies"] = companies;
+        ViewData["Tags"] = tags;
     }
 
     public void OnPostAsync()

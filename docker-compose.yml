@@ -24,4 +24,4 @@ services:
     build: .
     restart: always
     ports:
-      - "80:7074"
+      - "80:80"
