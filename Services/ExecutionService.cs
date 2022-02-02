@@ -63,6 +63,8 @@ public class ExecutionService : IExecutionService
 
             httpRequestMessage.Content = JsonContent.Create(request);
 
+            _logger.LogInformation("Send request to the compiler");
+
             var httpResponseMessage = httpClient.Send(httpRequestMessage);
 
             if (httpResponseMessage.IsSuccessStatusCode)
