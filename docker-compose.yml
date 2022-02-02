@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: ProblemSolving
+    ports:
+      - "27017:27017"
+  compiler:
+    image: compiler
+    restart: always
+    environment:
+      DELETE_DOCKER_IMAGE: "true"
+      EXECUTION_MEMORY_MAX: 10000
+      EXECUTION_MEMORY_MIN: 0
+      EXECUTION_TIME_MAX: 15
+      EXECUTION_TIME_MIN: 0
+    ports:
+      - "8080:8082"
+  app:
+    build: .
+    restart: always
+    ports:
+      - "80:7074"
