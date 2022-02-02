@@ -78,7 +78,6 @@ public class ExecutionService : IExecutionService
 
                 if (compilerResponse != null && !compilerResponse.status.Equals(ACCEPTED_STATUS))
                 {
-                    _logger.LogInformation(compilerResponse.status + " verdict int test case {}", testCaseIndex);
 
                     serviceResponse = new ServiceResponse(compilerResponse.status + " at test case " + testCaseIndex + ", expected output : "
                      + compilerResponse.expectedOutput + ", actual output : " + compilerResponse.output, compilerResponse.status,
