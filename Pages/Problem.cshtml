@@ -90,7 +90,7 @@
 
                 <hr>
 
-                <div style="padding: 4%">
+                <div>
                     <p>
                         @ViewBag.Problem.ProblemDescription
                     </p>
@@ -129,10 +129,6 @@
 
                 </div>
 
-                <div>
-
-                </div>
-
                 <hr>
 
                 <h4>Input</h4>
@@ -155,13 +151,13 @@
                     <h4>
                         Input
                     </h4>
-                    <p>
+                    <p class="alert alert-success">
                         @example.Input
                     </p>
                     <h4>
                         Expected Output
                     </h4>
-                    <p>
+                    <p class="alert alert-success">
                         @example.Output
                     </p>
                     <h4>
@@ -172,6 +168,8 @@
                     </p>
                 }
 
+                <hr>
+
             </div>
             <div class="col-sm-2 sidenav">
                 <h3>Topics</h3>
@@ -181,6 +179,7 @@
                     <p><a href="/?topic@Tag=">@Tag</a></p>
                 }
             </div>
+
         </div>
     </div>
 
