@@ -160,12 +160,16 @@
                     <p class="alert alert-success">
                         @example.Output
                     </p>
-                    <h4>
-                        Explanation
-                    </h4>
-                    <p>
-                        @example.Explanation
-                    </p>
+
+                    @if ((@example.explanation is not null) && @example.Explanation != "")
+                    {
+                        <h4>
+                            Explanation
+                        </h4>
+                        <p>
+                            @example.Explanation
+                        </p>
+                    }
 
                     <hr>
                 }
