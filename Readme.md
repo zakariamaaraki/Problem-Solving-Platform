@@ -43,6 +43,10 @@ The UI is written using **Razor** template engine
 
 ![Problem Interface](images/problem_interface.png?raw=true "ProblemInterface")
 
+### Submissions
+
+![Submissions Interface](images/Submission_page.png?raw=true "SubmissionsInterface")
+
 ## Author
 
 - **Zakaria Maaraki** - _Initial work_ - [zakariamaaraki](https://github.com/zakariamaaraki)
