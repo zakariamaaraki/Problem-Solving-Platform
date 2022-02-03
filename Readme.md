@@ -41,7 +41,7 @@ The UI is written using **Razor** template engine
 
 ### Problem Interface
 
-![Problem Interface](images/problem_interface?raw=true "ProblemInterface")
+![Problem Interface](images/problem_interface.png?raw=true "ProblemInterface")
 
 ## Author
 
