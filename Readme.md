@@ -27,15 +27,21 @@ docker-compose up --build
 
 ![Architecture](images/ProblemSolvingPlatform.png?raw=true "ProblemSolvingPlatform")
 
-## UI
-
-The UI is written using **Razor** template engine
 
 ## For dev env
 
 For dev env you can use the swagger page accessible using this url : [https://localhost:7074/swagger](https://localhost:7074/swagger)
 
 ![Swagger](images/Swagger-page.png?raw=true "ProblemSolvingPlatformSwagger")
+
+
+## UI
+
+The UI is written using **Razor** template engine
+
+### Problem Interface
+
+![Problem Interface](images/Problem_interface.png?raw=true "ProblemInterface")
 
 ## Author
 
