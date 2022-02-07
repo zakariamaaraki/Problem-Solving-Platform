@@ -1,7 +1,9 @@
 # Problem Solving Platform
 
 Platform for competitive coding where programmers can practice solving problems from **very beginner level** to **very advanced level**.
-This Platform is written using .NET Core
+This Platform is written using .NET Core.
+
+The platform supports 4 programming languages : **Java**, **C++**, **C**, and **Python**
 
 ## Dependencies
 
