@@ -1,3 +1,5 @@
+[![.NET](https://github.com/zakariamaaraki/Problem-Solving-Platform/actions/workflows/dotnet.yml/badge.svg)](https://github.com/zakariamaaraki/Problem-Solving-Platform/actions/workflows/dotnet.yml)
+
 # Problem Solving Platform
 
 Platform for competitive coding where programmers can practice solving problems from **very beginner level** to **very advanced level**.
