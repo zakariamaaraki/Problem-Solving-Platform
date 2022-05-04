@@ -5,7 +5,6 @@ using MongoDB.Bson.Serialization.Attributes;
 
 public record Problem
 {
-
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string Id { get; set; }
@@ -35,5 +34,4 @@ public record Problem
     public long NumberOfSubmissions { get; set; }
 
     public long NumberOfAcceptedAnswer { get; set; }
-
 }

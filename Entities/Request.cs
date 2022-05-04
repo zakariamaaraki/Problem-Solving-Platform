@@ -2,20 +2,25 @@ namespace Problem.Entities;
 
 public record Request
 {
+    public string Input { get; }
 
-    public string Input { get; set; }
+    public string ExpectedOutput { get; }
 
-    public string ExpectedOutput { get; set; }
+    public string SourceCode { get; }
 
-    public string SourceCode { get; set; }
+    public Language Language { get; }
 
-    public Language Language { get; set; }
+    public int TimeLimit { get; }
 
-    public int TimeLimit { get; set; }
+    public int MemoryLimit { get; }
 
-    public int MemoryLimit { get; set; }
-
-    public Request(string input, string expectedOutput, string sourceCode, Language language, int timeLimit, int memoryLimit)
+    public Request(
+        string input, 
+        string expectedOutput, 
+        string sourceCode, 
+        Language language, 
+        int timeLimit, 
+        int memoryLimit)
     {
         Input = input;
         ExpectedOutput = expectedOutput;
@@ -24,5 +29,4 @@ public record Request
         TimeLimit = timeLimit;
         MemoryLimit = memoryLimit;
     }
-
 }

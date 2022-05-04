@@ -23,10 +23,16 @@ public class SubmissionService : ISubmissionService
     }
 
     public async Task<List<ServiceResponse>> GetAsync(int limit) =>
-        await _submissionsCollection.Find(_ => true).SortByDescending((submission) => submission.DateTime).Limit(limit).ToListAsync();
+        await _submissionsCollection
+            .Find(_ => true)
+            .SortByDescending((submission) => submission.DateTime)
+            .Limit(limit)
+            .ToListAsync();
 
     public async Task<ServiceResponse> GetAsync(string id) =>
-        await _submissionsCollection.Find(submission => submission.Id == id).FirstOrDefaultAsync();
+        await _submissionsCollection
+            .Find(submission => submission.Id == id)
+            .FirstOrDefaultAsync();
 
     public async Task CreateAsync(ServiceResponse serviceResponse) =>
         await _submissionsCollection.InsertOneAsync(serviceResponse);

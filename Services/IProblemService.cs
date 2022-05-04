@@ -1,11 +1,9 @@
 namespace Problem.Services;
 
 using Problem.Entities;
-using Microsoft.Extensions.Options;
 
 public interface IProblemService
 {
-
     Task<List<Problem>> GetAsync();
 
     Task<Problem> GetAsync(string id);
@@ -21,5 +19,4 @@ public interface IProblemService
     Task UpdateAsync(string id, Problem updatedProblem);
 
     Task RemoveAsync(string id);
-
 }

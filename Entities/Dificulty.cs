@@ -2,5 +2,5 @@ namespace Problem.Entities;
 
 public enum Difficulty
 {
-    EASY, MEDIUM, HARD
+    Easy, Medium, Hard
 }

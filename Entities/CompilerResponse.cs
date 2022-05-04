@@ -2,13 +2,11 @@ namespace Problem.Entities;
 
 public record CompilerResponse
 {
+    public string Output { get; set; }
 
-    public string output { get; set; }
+    public string ExpectedOutput { get; set; }
 
-    public string expectedOutput { get; set; }
+    public string Status { get; set; }
 
-    public string status { get; set; }
-
-    public DateTime dateTime { get; set; }
-
+    public DateTime DateTime { get; set; }
 }

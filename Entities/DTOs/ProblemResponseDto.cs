@@ -39,7 +39,9 @@ public record ProblemResponseDto
         this.TimeLimit = problem.TimeLimit;
         this.MemoryLimit = problem.MemoryLimit;
         this.Difficulty = problem.Difficulty;
-        this.Acceptance = problem.NumberOfSubmissions == 0 ? 0 : (float)problem.NumberOfAcceptedAnswer / problem.NumberOfSubmissions * 100;
+        this.Acceptance = problem.NumberOfSubmissions == 0 
+            ? 0 
+            : (float)problem.NumberOfAcceptedAnswer / problem.NumberOfSubmissions * 100;
     }
 
 }

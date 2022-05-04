@@ -26,7 +26,14 @@ public class ServiceResponse
 
     public ServiceResponse() { }
 
-    public ServiceResponse(string message, string status, string problemReference, string problemName, DateTime dateTime, Language language, string sourceCode)
+    public ServiceResponse(
+        string message, 
+        string status, 
+        string problemReference, 
+        string problemName, 
+        DateTime dateTime, 
+        Language language, 
+        string sourceCode)
     {
         Message = message;
         Status = status;

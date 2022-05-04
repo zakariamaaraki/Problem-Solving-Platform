@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/[controller]")]
 public class CompilerController : ControllerBase
 {
-
     private readonly IExecutionService _executionService;
 
     public CompilerController(IExecutionService executionService)
@@ -28,8 +27,5 @@ public class CompilerController : ControllerBase
         }
 
         return new ServiceResponseDto(response);
-
     }
-
-
 }

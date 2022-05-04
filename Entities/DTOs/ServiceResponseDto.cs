@@ -5,7 +5,6 @@ using MongoDB.Bson.Serialization.Attributes;
 
 public class ServiceResponseDto
 {
-
     public string Message { get; set; }
 
     public string Status { get; set; }
@@ -30,7 +29,4 @@ public class ServiceResponseDto
         this.Language = serviceResponse.Language;
         this.SourceCode = serviceResponse.SourceCode;
     }
-
-
-
 }

@@ -25,16 +25,24 @@ public class ProblemService : IProblemService
         await _problemsCollection.Find(_ => true).ToListAsync();
 
     public async Task<Problem> GetAsync(string id) =>
-        await _problemsCollection.Find(problem => problem.Id == id).FirstOrDefaultAsync();
+        await _problemsCollection
+            .Find(problem => problem.Id == id)
+            .FirstOrDefaultAsync();
 
     public async Task<List<Problem>> GetByCompanyAsync(string company) =>
-        await _problemsCollection.Find(problem => problem.Companies.Any(problemCompany => problemCompany.Equals(company))).ToListAsync();
+        await _problemsCollection
+            .Find(problem => problem.Companies.Any(problemCompany => problemCompany.Equals(company)))
+            .ToListAsync();
 
     public async Task<List<Problem>> GetByTagAsync(string tag) =>
-        await _problemsCollection.Find(problem => problem.Tags.Any(problemTag => problemTag.Equals(tag))).ToListAsync();
+        await _problemsCollection
+            .Find(problem => problem.Tags.Any(problemTag => problemTag.Equals(tag)))
+            .ToListAsync();
 
     public async Task<List<Problem>> GetByDifficultyAsync(Difficulty difficulty) =>
-        await _problemsCollection.Find(problem => problem.Difficulty == difficulty).ToListAsync();
+        await _problemsCollection
+            .Find(problem => problem.Difficulty == difficulty)
+            .ToListAsync();
 
     public async Task CreateAsync(Problem problem) =>
         await _problemsCollection.InsertOneAsync(problem);

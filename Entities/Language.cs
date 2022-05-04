@@ -2,5 +2,5 @@ namespace Problem.Entities;
 
 public enum Language
 {
-    JAVA, C, CPP, PYTHON
+    Java, C, Cpp, Python
 }

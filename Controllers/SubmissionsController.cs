@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/[controller]")]
 public class SubmissionsController : ControllerBase
 {
-
     private readonly ISubmissionService _submissionService;
 
     public SubmissionsController(ISubmissionService submissionService)
@@ -19,7 +18,6 @@ public class SubmissionsController : ControllerBase
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<ServiceResponse>> Get(string id)
     {
-
         var serviceResponse = await _submissionService.GetAsync(id);
 
         if (serviceResponse == null)
@@ -28,13 +26,11 @@ public class SubmissionsController : ControllerBase
         }
 
         return serviceResponse;
-
     }
 
     [HttpGet]
     public async Task<ActionResult<List<ServiceResponse>>> Get(int limit)
     {
-
         var serviceResponse = await _submissionService.GetAsync(limit);
 
         if (serviceResponse == null)
@@ -43,7 +39,6 @@ public class SubmissionsController : ControllerBase
         }
 
         return serviceResponse;
-
     }
 
 

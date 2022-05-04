@@ -15,19 +15,22 @@ public class ExecutionService : IExecutionService
 
     private readonly ILogger<ExecutionService> _logger;
 
-    private readonly string remoteCompilerUrl;
+    private readonly string _remoteCompilerUrl;
 
-    private readonly string ACCEPTED_STATUS = "Accepted";
+    private readonly string _ACCEPTED_STATUS = "Accepted";
 
-    public ExecutionService(IOptions<RemoteCompilerSettings> remoteCompilerSettings, IProblemService problemService,
-                            IHttpClientFactory httpClientFactory, ILogger<ExecutionService> logger,
-                            ISubmissionService submissionService)
+    public ExecutionService(
+        IOptions<RemoteCompilerSettings> remoteCompilerSettings, 
+        IProblemService problemService,
+        IHttpClientFactory httpClientFactory, 
+        ILogger<ExecutionService> logger,
+        ISubmissionService submissionService)
     {
         _problemService = problemService;
         _httpClientFactory = httpClientFactory;
         _logger = logger;
         _submissionService = submissionService;
-        remoteCompilerUrl = remoteCompilerSettings.Value.Url;
+        _remoteCompilerUrl = remoteCompilerSettings.Value.Url;
     }
 
     public ServiceResponse Execute(Submission submission)
@@ -58,7 +61,7 @@ public class ExecutionService : IExecutionService
 
             var httpRequestMessage = new HttpRequestMessage(
                 HttpMethod.Post,
-                remoteCompilerUrl
+                _remoteCompilerUrl
             );
 
             httpRequestMessage.Content = JsonContent.Create(request);
@@ -76,11 +79,13 @@ public class ExecutionService : IExecutionService
 
                 _logger.LogInformation("Response : ", compilerResponse);
 
-                if (compilerResponse != null && !compilerResponse.status.Equals(ACCEPTED_STATUS))
+                if (compilerResponse != null && !compilerResponse.Status.Equals(_ACCEPTED_STATUS))
                 {
 
-                    serviceResponse = new ServiceResponse(compilerResponse.status + " in test case " + testCaseIndex + ", expected output : "
-                     + compilerResponse.expectedOutput + ", actual output : " + compilerResponse.output, compilerResponse.status,
+                    serviceResponse = new ServiceResponse(
+                        compilerResponse.Status + " in test case " + testCaseIndex + ", expected output : " 
+                        + compilerResponse.ExpectedOutput + ", actual output : " 
+                        + compilerResponse.Output, compilerResponse.Status,
                      problem.Id, problem.Name, DateTime.Now, submission.Language, submission.SourceCode);
 
                     _submissionService.CreateAsync(serviceResponse);
@@ -100,7 +105,7 @@ public class ExecutionService : IExecutionService
             }
         }
 
-        serviceResponse = new ServiceResponse(ACCEPTED_STATUS + ", all test cases passed", ACCEPTED_STATUS,
+        serviceResponse = new ServiceResponse(_ACCEPTED_STATUS + ", all test cases passed", _ACCEPTED_STATUS,
         problem.Id, problem.Name, DateTime.Now, submission.Language, submission.SourceCode);
 
         _submissionService.CreateAsync(serviceResponse);
@@ -112,5 +117,4 @@ public class ExecutionService : IExecutionService
 
         return serviceResponse;
     }
-
 }

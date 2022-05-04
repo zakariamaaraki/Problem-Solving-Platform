@@ -51,8 +51,6 @@ public record ProblemRequestDto
         problem.TimeLimit = this.TimeLimit;
         problem.MemoryLimit = this.MemoryLimit;
         problem.Difficulty = this.Difficulty;
-
         return problem;
     }
-
 }

@@ -19,11 +19,13 @@ public class ProblemsController : ControllerBase
         return await Task.Run(() =>
         {
             List<ProblemResponseDto> problemResponseDtos = new List<ProblemResponseDto>();
-            _problemService.GetAsync().Result.ForEach(problem => problemResponseDtos.Add(new ProblemResponseDto(problem)));
+            _problemService
+                .GetAsync()
+                .Result
+                .ForEach(problem => problemResponseDtos.Add(new ProblemResponseDto(problem)));
             return problemResponseDtos;
         });
     }
-
 
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<ProblemResponseDto>> Get(string id)
@@ -44,7 +46,10 @@ public class ProblemsController : ControllerBase
         return await Task.Run(() =>
         {
             List<ProblemResponseDto> problemResponseDtos = new List<ProblemResponseDto>();
-            _problemService.GetByCompanyAsync(company).Result.ForEach(problem => problemResponseDtos.Add(new ProblemResponseDto(problem)));
+            _problemService
+                .GetByCompanyAsync(company)
+                .Result
+                .ForEach(problem => problemResponseDtos.Add(new ProblemResponseDto(problem)));
             return problemResponseDtos;
         });
     }
@@ -55,7 +60,10 @@ public class ProblemsController : ControllerBase
         return await Task.Run(() =>
         {
             List<ProblemResponseDto> problemResponseDtos = new List<ProblemResponseDto>();
-            _problemService.GetByTagAsync(tag).Result.ForEach(problem => problemResponseDtos.Add(new ProblemResponseDto(problem)));
+            _problemService
+                .GetByTagAsync(tag)
+                .Result
+                .ForEach(problem => problemResponseDtos.Add(new ProblemResponseDto(problem)));
             return problemResponseDtos;
         });
     }
@@ -66,7 +74,10 @@ public class ProblemsController : ControllerBase
         return await Task.Run(() =>
         {
             List<ProblemResponseDto> problemResponseDtos = new List<ProblemResponseDto>();
-            _problemService.GetByDifficultyAsync(difficulty).Result.ForEach(problem => problemResponseDtos.Add(new ProblemResponseDto(problem)));
+            _problemService
+                .GetByDifficultyAsync(difficulty)
+                .Result
+                .ForEach(problem => problemResponseDtos.Add(new ProblemResponseDto(problem)));
             return problemResponseDtos;
         });
     }
@@ -115,10 +126,6 @@ public class ProblemsController : ControllerBase
 
         return NoContent();
     }
-
-
-
-
 }
 
 
